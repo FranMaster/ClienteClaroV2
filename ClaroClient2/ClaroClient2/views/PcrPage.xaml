@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ClaroClient2.views.PcrPage"
+             BackgroundImageSource="fondo"
+            >
+  <!--Pages can be added as references or inline-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="auto"/>           
+            <RowDefinition Height="*" />
+       
+        </Grid.RowDefinitions>
+        <!--Cabecera-->
+        <Grid BackgroundColor="Red">
+            <Image Source="logoBlanco" 
+                   HeightRequest="40"
+                   Margin="10,0,0,0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
+            <Label Text="{Binding NombreUsuario}" HorizontalOptions="End"
+                   VerticalOptions="Center" TextColor="White"
+                   FontAttributes="Bold" Margin="0,0,30,0" FontSize="Small"/>
+        </Grid>
+        <!--Saldo-->
+        <Grid  Grid.Row="1" IsVisible="{Binding VisibilidadSaldo}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" HorizontalOptions="Center"
+                           Text="Saldo para Cargas:" 
+                           TextColor="Red"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                          FontSize="Medium"
+                           />
+
+
+            <Label Grid.Column="1"    HorizontalOptions="Start"
+                                      HorizontalTextAlignment="Center"
+                                      VerticalTextAlignment="Center"                                                                        
+                                      Text="{Binding SaldoActual,Mode=TwoWay}"
+                                      TextColor="Black"
+                                      FontAttributes="Bold"
+                                      FontSize="Small"
+                                      HeightRequest="12"
+                         >
+                </Label>
+
+         
+        </Grid>
+       
+        <!--Grilla de Datos-->
+        <Grid Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="Recargas Recientes:" 
+                   FontAttributes="Bold"  
+                   TextColor="Red"
+                   FontSize="Medium"
+                   Margin="10,0,0,0" Grid.Row="0"/>
+
+            <ListView  ItemsSource="{Binding ListaRecientes}"                          
+                          HorizontalOptions="Center"
+                          HasUnevenRows="True"
+                          Grid.Row="1">
+                <ListView.Header>
+                    <Grid Margin="0,0,0,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Datos " 
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center"
+                                        Margin="0,0,0,5"
+                                         />
+                        <Label Text="Fecha"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" 
+                                       Grid.Column="2" 
+                               HorizontalTextAlignment="Center"
+                               Margin="0,0,0,5"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding MensajeTelefono}" HorizontalTextAlignment="Center"   />
+                                <Label Text="{Binding Fecha}" HorizontalTextAlignment="Center"  Grid.Column="2" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+       
+    </Grid>
+</ContentPage>

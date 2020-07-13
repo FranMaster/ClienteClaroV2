@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ClaroClient2.views"
+             mc:Ignorable="d"
+             x:Class="ClaroClient2.views.HomePage"
+             BarBackgroundColor="Red"
+             SelectedTabColor="White" 
+             NavigationPage.HasNavigationBar="False">
+  <!--Pages can be added as references or inline-->
+  <local:RecargasPage x:Name="Recargas" Title="Recarga" IconImageSource="telephone"/>
+  <local:PcrPage Title="Home"  x:Name="Pcr" IconImageSource="plus"/>
+  <ContentPage Title="Historial" x:Name="Historial" IconImageSource="stats" />
+</TabbedPage>

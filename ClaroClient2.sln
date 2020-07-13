@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaroClient2.Android", "ClaroClient2\ClaroClient2.Android\ClaroClient2.Android.csproj", "{DDE45C9E-8376-45B4-AFC2-1CC278853AD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaroClient2", "ClaroClient2\ClaroClient2\ClaroClient2.csproj", "{01DFCFC8-CE77-433F-BE01-B344EAD7B28F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiConsumer", "ClaroClient2\ApiConsumer-4.6.1\ApiConsumer\ApiConsumer.csproj", "{330D0DB4-D9C4-400B-8E0E-8D74040B1391}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDE45C9E-8376-45B4-AFC2-1CC278853AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE45C9E-8376-45B4-AFC2-1CC278853AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE45C9E-8376-45B4-AFC2-1CC278853AD6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DDE45C9E-8376-45B4-AFC2-1CC278853AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE45C9E-8376-45B4-AFC2-1CC278853AD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE45C9E-8376-45B4-AFC2-1CC278853AD6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{01DFCFC8-CE77-433F-BE01-B344EAD7B28F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01DFCFC8-CE77-433F-BE01-B344EAD7B28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01DFCFC8-CE77-433F-BE01-B344EAD7B28F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{01DFCFC8-CE77-433F-BE01-B344EAD7B28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01DFCFC8-CE77-433F-BE01-B344EAD7B28F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01DFCFC8-CE77-433F-BE01-B344EAD7B28F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{330D0DB4-D9C4-400B-8E0E-8D74040B1391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{330D0DB4-D9C4-400B-8E0E-8D74040B1391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{330D0DB4-D9C4-400B-8E0E-8D74040B1391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{330D0DB4-D9C4-400B-8E0E-8D74040B1391}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AE2E758-2F9A-431D-B772-61919F91D63A}
+	EndGlobalSection
+EndGlobal

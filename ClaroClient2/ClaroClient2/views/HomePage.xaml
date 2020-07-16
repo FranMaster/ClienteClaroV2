@@ -12,5 +12,5 @@
   <!--Pages can be added as references or inline-->
   <local:RecargasPage x:Name="Recargas" Title="Recarga" IconImageSource="telephone"/>
   <local:PcrPage Title="Home"  x:Name="Pcr" IconImageSource="plus"/>
-  <ContentPage Title="Historial" x:Name="Historial" IconImageSource="stats" />
+  <local:HistorialPage Title="Historial" x:Name="Historial" IconImageSource="stats" />
 </TabbedPage>

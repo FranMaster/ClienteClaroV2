@@ -51,6 +51,7 @@ namespace BurgerSpot.Droid
                 MensajeDeTEXTO = sb.ToString();
                 Utilities.Notify(Events.SmsRecieved, MensajeDeTEXTO);
                 //ListenToSmsRetriever();
+               
             }
             catch (Exception ex)
             {
@@ -58,7 +59,7 @@ namespace BurgerSpot.Droid
             }
         }
 
-
+       
 
     }
 }

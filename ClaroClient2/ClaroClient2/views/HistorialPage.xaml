@@ -4,16 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ClaroClient2.views.PcrPage"
+             x:Class="ClaroClient2.views.HistorialPage"
              BackgroundImageSource="fondo"
-            >
-  <!--Pages can be added as references or inline-->
+             Title="Historial"
+             >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="auto"/>           
             <RowDefinition Height="*" />
-       
+
         </Grid.RowDefinitions>
         <!--Cabecera-->
         <Grid BackgroundColor="Red">
@@ -27,47 +26,21 @@
                    FontAttributes="Bold" Margin="0,0,30,0" FontSize="Small"/>
         </Grid>
         <!--Saldo-->
-        <Grid  Grid.Row="1" IsVisible="{Binding VisibilidadSaldo}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" HorizontalOptions="Center"
-                           Text="Saldo para Cargas:" 
-                           TextColor="Red"
-                           FontAttributes="Bold"
-                           VerticalTextAlignment="Center"
-                          FontSize="Medium"
-                           />
+      
 
-
-            <Label Grid.Column="1"    HorizontalOptions="Start"
-                                      HorizontalTextAlignment="Center"
-                                      VerticalTextAlignment="Center"                                                                        
-                                      Text="{Binding SaldoActual,Mode=TwoWay}"
-                                      TextColor="Black"
-                                      FontAttributes="Bold"
-                                      FontSize="Small"
-                                      HeightRequest="12"
-                         >
-                </Label>
-
-         
-        </Grid>
-       
         <!--Grilla de Datos-->
-        <Grid Grid.Row="2" >
+        <Grid Grid.Row="1" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Text="Recargas Recientes:" 
+            <Label Text="Todas Las Recargas:" 
                    FontAttributes="Bold"  
                    TextColor="Red"
                    FontSize="Medium"
                    Margin="10,0,0,0" Grid.Row="0"/>
 
-            <ListView  ItemsSource="{Binding ListaRecientes}"                          
+            <ListView  ItemsSource="{Binding ListaDeRecargas}"                          
                           HorizontalOptions="Center"
                           HasUnevenRows="True"
                        SeparatorVisibility="None"
@@ -104,14 +77,14 @@
                                 <Frame.GestureRecognizers >
                                     <TapGestureRecognizer Command="{Binding SelectWebView}"/>
                                 </Frame.GestureRecognizers>
-                               <Grid Padding="5">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Label Text="{Binding mensaje}" HorizontalTextAlignment="Center"   />
-                                <Label Text="{Binding fechaRecarga}" HorizontalTextAlignment="Center"  Grid.Column="2" />
-                            </Grid>                             
+                                <Grid Padding="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding mensaje}" HorizontalTextAlignment="Center"   />
+                                    <Label Text="{Binding fechaRecarga}" HorizontalTextAlignment="Center"  Grid.Column="2" />
+                                </Grid>
                             </Frame>
                         </ViewCell>
                     </DataTemplate>
@@ -119,6 +92,6 @@
             </ListView>
         </Grid>
 
-       
+
     </Grid>
 </ContentPage>

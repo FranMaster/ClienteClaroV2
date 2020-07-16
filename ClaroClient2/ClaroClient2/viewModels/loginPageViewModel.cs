@@ -28,6 +28,11 @@ namespace ClaroClient2.viewModels
 
         private async void Login()
         {
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(password))
+            {
+                await Application.Current.MainPage.DisplayAlert("Aviso", "Por favor llena todos los Campos", "Volver");
+                return;
+            }
             var service = new ModuloGriseldaApi();
             var result=service.LogIN(new UserRequest { email=Email.Trim(),password=Password.Trim()});
             if (result.Success)

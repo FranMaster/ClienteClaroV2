@@ -11,6 +11,8 @@ namespace ClaroClient2.viewModels
         #region ViewModels
         public HomePageViewModel Home { get; set; }
         public loginPageViewModel Login { get; set; } 
+        public webPageViewModel Facturas { get; set; } 
+        public HistorialPageViewModel Historial { get; set; }
         #endregion
         public MainViewModel()
         {

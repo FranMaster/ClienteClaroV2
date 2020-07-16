@@ -1,5 +1,6 @@
 ﻿using ApiConsumer.Services;
 using ApiConsumer.Services.Modulogriselda.RecaragsListados.Response;
+using ClaroClient2.viewModels.itemsViewModel;
 using ClaroClient2.views;
 using ClaroNet.models;
 using GalaSoft.MvvmLight.Command;
@@ -67,8 +68,8 @@ namespace ClaroClient2.viewModels
 			get { return _pcr; }
 			set { _pcr = value; onPropertyChanged(nameof(Pcr)); }
 		}
-        private ObservableCollection<GetRecarga> _listaRecientes;
-        public ObservableCollection<GetRecarga> ListaRecientes
+        private ObservableCollection<itemRecargasViewModel> _listaRecientes;
+        public ObservableCollection<itemRecargasViewModel> ListaRecientes
         {
             get { return _listaRecientes; }
             set
@@ -109,19 +110,28 @@ namespace ClaroClient2.viewModels
 		{
 			var sesion = Session.GetInstance();				  
 			var service =  new ModuloGriseldaApi();
-              var resp=service.ObtenerRecargas(
+              var resp=service.ObtenerRecargasRecientes(
 				 new ApiConsumer.Services.Modulogriselda.Recarags.Request.GetRecargasRequest { email = sesion.UsuarioLogueado.data.usuario.email },
 				  sesion.UsuarioLogueado.token
 				 );
             if (!resp.Success)
                 return;
             resp.ObjectData.recarga.Reverse();
-            ListaRecientes = new ObservableCollection<GetRecarga>(resp.ObjectData.recarga);
+            ListaRecientes = new ObservableCollection<itemRecargasViewModel>(this.ToItemRecargaViewModel(resp.ObjectData.recarga));
+			
 
-        }
+		}
 
-
-
-
+        #region Methods
+        private IEnumerable<itemRecargasViewModel> ToItemRecargaViewModel(List<GetRecarga> recarga)
+        {
+		
+			return recarga.Select(l => new itemRecargasViewModel
+			{
+				fechaRecarga = l.fechaRecarga,
+				mensaje = l.mensaje
+			}).ToList();
+        } 
+        #endregion
     }
 }

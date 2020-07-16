@@ -31,6 +31,16 @@ namespace ApiConsumer.Services
             return base.Post<GetListadoResponse>(uri, controller,email , headers, "application/x-www-form-urlenconded");
         }
 
+        public GenericResponse<GetListadoResponse> ObtenerRecargasRecientes(GetRecargasRequest datos, string token)
+        {
+            string uri = "https://backendclarov2.herokuapp.com";
+            string controller = "recarga/listRecargasRecientes";
+            IDictionary<string, string> headers = new Dictionary<string, string>();
+            headers.Add("token", $"{token}");
+            return base.Post<GetListadoResponse>(uri, controller, datos, headers, "application/x-www-form-urlenconded");
+        }
+
+
         public GenericResponse<RecargaResponse> InsertarRecarga(InsertRecargasRequest datos,string token)
         {
             string uri = "https://backendclarov2.herokuapp.com";
@@ -152,6 +162,12 @@ namespace ApiConsumer.Services.Modulogriselda.Recarags.Request
   public  class GetRecargasRequest
     {
         public string email { get; set; }
+    }
+
+    public class GetRecargasRequestRecientes
+    {
+        public string email { get; set; }
+        public string fechaRecargaString { get; set; }
     }
 
     public class InsertRecargasRequest

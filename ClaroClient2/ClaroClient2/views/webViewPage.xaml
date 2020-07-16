@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ClaroClient2.views.webViewPage"
+             Title="Factura"
+             BindingContext="{Binding Main,Source={StaticResource locator}}"
+             BackgroundImageSource="fondo">
+    <ContentPage.Content>
+        <Grid>
+            <Frame VerticalOptions="Center" 
+               Margin="20"
+               CornerRadius="20"
+               HasShadow="True">
+                <Grid BindingContext="{Binding Facturas}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Padding="15,0,0,0">
+                            <Label  FontAttributes="Bold" Text="Factura:" TextColor="Black"/>
+                            <Label   Text="{Binding Factura}" TextColor="Black"/>
+                            <Label  FontAttributes="Bold" Text="Establecimiento:"  TextColor="Black"/>
+                            <Label Text="{Binding Establecimiento}"/>
+                            <Label  FontAttributes="Bold" Text="Fecha:"  TextColor="Black"/>
+                            <Label Text="{Binding FechaActual}"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="1" BackgroundColor="#f62323">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Descripción" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+                        <Label Grid.Column="1" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Text="Monto"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="{Binding Description}" HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"/>
+                        <Label  Grid.Column="1" Text="{Binding Monto}" HorizontalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center"
+                                 >
+                            <Label TextColor="Black" FontAttributes="Bold"  Text="Total:"/>
+                            <Label  Text="{Binding Monto}"/>
+                        </StackLayout>
+                    </Grid>
+
+                </Grid>
+            </Frame>
+            <Grid VerticalOptions="End" Margin="40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <ImageButton HorizontalOptions="Start"
+                             HeightRequest="50"
+                             Source="whatsapp" 
+                             BackgroundColor="Transparent"/>
+                <ImageButton Grid.Column="1"
+                             HorizontalOptions="Center" 
+                             Source="facebook"
+                             BackgroundColor="Transparent"
+                             HeightRequest="50"/>
+                <ImageButton Grid.Column="2"
+                             HorizontalOptions="End" 
+                             Source="gmail" 
+                             BackgroundColor="Transparent"
+                              HeightRequest="50"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -91,6 +91,7 @@ namespace ClaroClient2.viewModels
 		public void CargarRecargas()
 		{
 			var sesion = Session.GetInstance();
+
 			var service = new ModuloGriseldaApi();
 			var resp = service.ObtenerRecargas(
 			   new ApiConsumer.Services.Modulogriselda.Recarags.Request.GetRecargasRequest { email = sesion.UsuarioLogueado.data.usuario.email },
